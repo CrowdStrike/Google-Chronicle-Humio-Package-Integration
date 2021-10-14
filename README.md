@@ -8,22 +8,22 @@ The Chronicle IOCs package parses and visualizes IOC data from the Chronicle Sea
 
 Each of these python scripts pulls data from their respective Chronicle Search API endpoints at a fixed time interval and posts data recieved to Humio via the HTTP Event Collector (HEC) every 5 minutes. To run either script, you first need to provide your Humio URL, the ingest token for your repository, and the path to your Google Service Account credentials JSON file. You can also configure the polling interval.
 
-'''python
+```python
 HUMIO_INGEST_TOKEN = "YOUR_INGEST_TOKEN_HERE"
 HUMIO_BASE_URL = "YOUR_BASE_URL_HERE"
 POLLING_INTERVAL = 60 * 5
 # Change to the location you placed your JSON file.
 SERVICE_ACCOUNT_FILE = "PATH_TO_SERVICE_CREDS_JSON"
-'''
+```
 
 To run the Chronicle IOCs consumer, run the following command:
 
-'''
+```
 python3 chronicle_iocs_to_humio.py
-'''
+```
 
 To run the Chronicle Alerts consumer, run the following command:
 
-'''
+```
 python3 chronicle_alerts_to_humio.py
-'''
+```
